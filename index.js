@@ -1,5 +1,7 @@
+//Imports
 import express from "express";
-import router from "./routes/router.js";
+import userRouter from "./routes/userRouter.js";
+import gastosRouter from "./routes/gastosRouter.js";
 
 //Variables
 const app = express();
@@ -12,7 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 
 
 //Rutas
-app.use("/", router);
+app.use("/", userRouter);
+app.use("/", gastosRouter);
 
 //Puerto
 app.listen(PORT, () => console.log(`Server running on port http://localhost:${PORT}`));
